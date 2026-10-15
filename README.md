@@ -36,7 +36,7 @@ Tienda física con mostrados y estanterías, y un pequeño almacén en el mismo 
 ## 3. Objetivos (Requisitos generales)
 
 - RG1 — Control de inventario y caducidades: Como empleado, quiero mantener actualizada la cantidad disponible de cada producto y saber si son perecederos, para evitar roturas de stock y controlar las mermas.
-- RG2 — Registro de operaciones: Como empleado, quiero registrar compras, ventas y ajustes, para tener la trazabilidad exacta de la mercancía.
+- RG2 — Registro de operaciones: Como empleado, quiero registrar compras a proveedores, ventas a clientes y ajustes, para tener la trazabilidad exacta de la mercancía.
 - RG3 — Detección y gestión de alertas: Como empleado, quiero recibir listados de stock bajo, para planificar los pedidos a los proveedores.
 - RG4 — Control de usuarios: Como empleado, quiero gestionar la información de todos los empleados y proveedores.
 
@@ -240,7 +240,7 @@ para controlar qué trabajador ejecuta cada acción y garantizar la trazabilidad
 ##### RG4-RI-08 — Proveedores
 
 Como empleado del supermercado,
-quiero reconocer a los proveedores como las entidades externas que suministran productos de alimentación y limpieza,
+quiero reconocer a los proveedores como usuarios que suministran productos de alimentación y limpieza,
 para poder registrar las compras, asociarlas a un distribuidor concreto y mantener el control del inventario.
 
 ---
