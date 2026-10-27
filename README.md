@@ -355,20 +355,16 @@ para garantizar que solo los empleados con permisos puedan dar de alta productos
 
 #### Escenario 1 (positivo): venta en caja de un producto por unidad y otro a granel
 
-La empleada `e1` cobra al cliente `c1` 4 briks de leche (tipo unidad, 1.10 €) y 1.25 kg de manzanas (tipo granel, 2.40 €/kg). Hay stock suficiente de los dos productos, así que la venta se registra con un importe total de 7.40 €. El stock de la leche baja de 50 a 46 y el de las manzanas de 35.5 a 34.25.
+La empleada e1 cobra al cliente c1 4 briks de leche (tipo unidad, 1.10 €) y 1.25 kg de manzanas (tipo granel, 2.40 €/kg). Hay stock suficiente de los dos productos, así que la venta se registra con un importe total de 7.40 €. El stock de la leche baja de 50 a 46 y el de las manzanas de 35.5 a 34.25.
 Se cumplen R.N.05, R.N.07, R.N.08, R.N.10 y R.N.11.
 
 <img width="1242" height="668" alt="escenario2" src="https://github.com/user-attachments/assets/1677c138-6ab4-42c7-811a-f529169eb989" />
 
 #### Escenario 2 (negativo): venta que incumple R.N.07, R.N.08 y R.N.11
 
-Se intenta registrar una venta asociada al proveedor `pr1` en lugar de a un cliente, lo que incumple R.N.11. Además, una línea vende 1.5 unidades de leche, que es de tipo unidad (R.N.07), y otra pide 60 botellas de agua cuando solo quedan 50 en stock (R.N.08). El sistema rechaza la venta.
+Se intenta registrar una venta asociada al proveedor pr1 en lugar de a un cliente, lo que incumple R.N.11. Además, una línea vende 1.5 unidades de leche, que es de tipo unidad (R.N.07), y otra pide 60 botellas de agua cuando solo quedan 50 en stock (R.N.08). El sistema rechaza la venta.
 
 ## 6. Matrices de trazabilidad
-
-- Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
-
-[Uploading matriz_traz## 6. Matrices de trazabilidad
 
 - Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
 
