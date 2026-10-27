@@ -372,7 +372,8 @@ Se intenta registrar una venta asociada al proveedor `pr1` en lugar de a un clie
 
 - Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
 
-[matriz_trazabilidad.pdf](https://github.com/user-attachments/files/34039160/matriz_trazabilidad.pdf)
+<img width="1131" height="802" alt="image" src="https://github.com/user-attachments/assets/3b71f5eb-b663-484d-9189-21f9cbc14209" />
+
 
 -- fin entregable 2 --
 
