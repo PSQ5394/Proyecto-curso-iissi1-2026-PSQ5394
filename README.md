@@ -1,4 +1,4 @@
-# Supermercado La Guadaíra
+[matriz_trazabilidad.md](https://github.com/user-attachments/files/34038842/matriz_trazabilidad.md)# Supermercado La Guadaíra
 
 ## Miembros del grupo
 
@@ -368,15 +368,11 @@ Se intenta registrar una venta asociada al proveedor `pr1` en lugar de a un clie
 
 - Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
 
-|       | EntidadX   | AsociaciónX  | RestricciónX  | Entidad2 ...   | 
-|:------|:-----------|:-----------|:-----------|:-----------|
-| RI-1  | X          | X          | X          | X          |
-| RI-2  |            | X          |            | X          |
-| RF-1  |            | X          |            | X          |
-| RF-2  | X          |            | X          | X          |
-| RN-1  |            | X          |            |            |
-| RN-2  | X          | X          | X          |            |
-| ...   |            |            |            |            |
+[Uploading matriz_traz## 6. Matrices de trazabilidad
+
+- Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
+
+[matriz_trazabilidad.pdf](https://github.com/user-attachments/files/34039160/matriz_trazabilidad.pdf)
 
 -- fin entregable 2 --
 
