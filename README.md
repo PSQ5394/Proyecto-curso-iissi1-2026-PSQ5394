@@ -346,7 +346,7 @@ para garantizar que solo los empleados con permisos puedan dar de alta productos
 
 ### 5.1. Diagramas de clases UML
 
-<img width="1238" height="1090" alt="DiagramaConceptual" src="https://github.com/user-attachments/assets/6602e338-1d13-4aaa-b3bc-2e1918f2860f" />
+<img width="1862" height="1207" alt="modeladoConceptualUltimo" src="https://github.com/user-attachments/assets/d2455ba9-c945-4a1e-b64e-293bad8e2fb0" />
 
 
 ### 5.2. Escenarios de prueba
