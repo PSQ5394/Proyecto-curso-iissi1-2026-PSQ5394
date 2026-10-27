@@ -1,4 +1,4 @@
-[matriz_trazabilidad.md](https://github.com/user-attachments/files/34038842/matriz_trazabilidad.md)# Supermercado La Guadaíra
+# Supermercado La Guadaíra
 
 ## Miembros del grupo
 
