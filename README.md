@@ -364,10 +364,8 @@ Se intenta registrar una venta asociada al proveedor pr1 en lugar de a un client
 
 - Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
 
-<img width="1131" height="802" alt="image" src="https://github.com/user-attachments/assets/3b71f5eb-b663-484d-9189-21f9cbc14209" />
+<img width="2056" height="1686" alt="image" src="https://github.com/user-attachments/assets/328c37fd-72fb-45b8-b359-f031231f2b03" />
 
-
--- fin entregable 2 --
 
 ## 7. Modelo relacional en 3FN
 
