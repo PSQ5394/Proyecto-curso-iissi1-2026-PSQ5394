@@ -31,7 +31,33 @@ Tienda física con mostrados y estanterías, y un pequeño almacén en el mismo 
 
 ## 2. Glosario de términos
 
-<img width="562" height="482" alt="image" src="https://github.com/user-attachments/assets/710c0675-f68c-4ee8-bf12-c55cdcdb2c49" />
+| Término | Definición |
+|:--|:--|
+| Ajuste por recuento | Movimiento de inventario que corrige el stock registrado cuando no coincide con el stock real contado en tienda o almacén. |
+| Base imponible | Importe de una venta antes de aplicar el IVA. |
+| Beneficio | Diferencia entre el importe obtenido por las ventas de un producto y su coste de compra. |
+| Categoría | Agrupación de productos de la misma familia (por ejemplo, Lácteos o Frutas y verduras) que permite clasificarlos y buscarlos. |
+| Cliente | Usuario que compra productos en la tienda. Una venta puede asociarse como máximo a un cliente. |
+| Código de barras | Identificador único estándar para productos envasados. Tiene al menos 6 caracteres y no se puede modificar. |
+| Compra | Pedido a un proveedor que, al recibirse, registra la entrada de mercancía en el inventario. |
+| Empleado | Usuario que trabaja en la tienda, tiene salario y es el único que puede registrar ventas, compras y mermas. |
+| IVA | Impuesto sobre el valor añadido que se aplica a cada producto (0 %, 4 %, 10 % o 21 %) y se desglosa en tickets y facturas. |
+| Línea de compra | Cada producto incluido en una compra, con la cantidad o peso recibido y su precio de coste. |
+| Línea de venta | Cada producto incluido en una venta, con la cantidad o peso vendido y su precio unitario. |
+| Merma | Ajuste negativo de inventario provocado por caducidad, deterioro (fruta/verdura) o rotura. |
+| Movimiento de inventario | Registro de cualquier cambio en el stock que no sea una venta o una compra: mermas y ajustes por recuento. |
+| Perecedero | Producto con fecha de caducidad o que se deteriora con el tiempo, por lo que requiere control para evitar mermas. |
+| Precio de coste | Precio unitario que paga el supermercado al proveedor por un producto. |
+| Precio de venta | Precio unitario al que el supermercado vende un producto. Debe ser mayor que el precio de coste. |
+| Producto | Artículo de venta. Puede ser perecedero o no, y venderse por unidades o a granel (peso). |
+| Proveedor | Usuario externo que suministra mercancía al supermercado. No puede ser empleado a la vez. |
+| Stock actual | Cantidad de un producto disponible en ese momento. No se puede vender ni mermar más de este valor. |
+| Stock mínimo | Cantidad umbral que dispara una alerta para reponer un producto antes de que se agote. |
+| Ticket | Justificante de una venta en caja con sus líneas, el desglose de IVA y el importe total. |
+| Usuario | Persona registrada en el sistema con sus datos personales, email y contraseña. Puede ser cliente, empleado o proveedor. |
+| Venta | Operación de cobro en caja realizada por un empleado, formada por una o varias líneas de venta. |
+| Venta a granel | Producto cuyo stock y venta se cuantifica en kilogramos (decimales) en lugar de unidades enteras. |
+| Venta por unidad | Producto que se vende en unidades enteras; no admite cantidades decimales. |
 
 ## 3. Objetivos (Requisitos generales)
 
