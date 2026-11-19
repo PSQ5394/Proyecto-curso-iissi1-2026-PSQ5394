@@ -64,7 +64,7 @@ Tienda física con mostrados y estanterías, y un pequeño almacén en el mismo 
 - RG1 — Control de inventario y caducidades: Como empleado, quiero mantener actualizada la cantidad disponible de cada producto y saber si son perecederos, para evitar roturas de stock y controlar las mermas.
 - RG2 — Registro de operaciones: Como empleado, quiero registrar compras a proveedores, ventas a clientes y ajustes, para tener la trazabilidad exacta de la mercancía.
 - RG3 — Detección y gestión de alertas: Como empleado, quiero recibir listados de stock bajo, para planificar los pedidos a los proveedores.
-- RG4 — Control de usuarios: Como empleado, quiero gestionar la información de todos los empleados y proveedores.
+- RG4 — Control de usuarios: Como empleado, quiero gestionar la información de todos los clientes, empleados y proveedores.
 
 ## 4. Catálogo de requisitos
 
@@ -149,7 +149,7 @@ para saber en todo momento de qué variedad disponemos en tienda y priorizar la 
 
 **Prueba de aceptación**
 - Se comprueba que al filtrar por una categoría (ej. Lácteos, Frutería, Limpieza) solo se devuelven productos pertenecientes a ella.
-- Se verifica que el filtro de productos perecederos muestra exclusivamente aquellos artículos con el atributo `esPerecedero` activo.
+- Se verifica que el filtro de productos perecederos muestra exclusivamente aquellos artículos con el atributo `perecedero` activo.
 
 #### R.F.09. Generación de facturas y tickets con desglose de IVA
 
@@ -191,11 +191,12 @@ Como empleado del supermercado,
 quiero que el sistema almacene por producto:
 - código de barras (o referencia interna)
 - nombre
-- precio
-- categoría
+- precio de venta
+- IVA aplicable (0 %, 4 %, 10 % o 21 %)
+- categoría (Lácteos, Frutas y verduras, Bebidas…)
 - stockMínimo
 - stockActual
-- esPerecedero (booleano)
+- perecedero (booleano)
 - tipoVenta (Unidad o Granel)
 para poder identificar, clasificar y controlar el stock y la caducidad de cada artículo.
 
@@ -216,8 +217,8 @@ para tener historial de pérdidas y auditoría del inventario físico.
 Como empleado del supermercado,
 quiero que el sistema guarde las ventas con:
 - fecha y hora
-- empleado que realiza la venta
-- cliente al que se le realiza la venta
+- empleado que cobra la venta
+- cliente al que se le realiza la venta (opcional: si el cliente no se identifica, la venta queda sin cliente asociado)
 y las líneas de venta con:
 - producto vendido
 - cantidad o peso vendido
@@ -247,8 +248,8 @@ quiero que el sistema almacene información sobre cada persona vinculada a la ti
 - teléfono
 - email
 - contraseña
-- salario (en el caso de que sea un empleado)
-- tipo de usuario
+
+Cada usuario puede ser cliente, empleado y/o proveedor (nunca empleado y proveedor a la vez), y según su tipo almacena además la información de los requisitos RG4-RI-06 a RG4-RI-08,
 para controlar quién puede acceder al sistema y gestionar sus datos.
 
 ##### RG4-RI-06 — Clientes
@@ -260,13 +261,17 @@ para poder registrar las ventas asociadas a ellos y gestionar correctamente su h
 ##### RG4-RI-07 — Empleados
 
 Como empleado del supermercado,
-quiero identificar a los empleados como las personas que realizan operaciones internas (ventas en caja, compras a proveedores y ajustes de mermas),
+quiero identificar a los empleados como las personas que realizan operaciones internas (ventas en caja, compras a proveedores y ajustes de mermas), almacenando de cada uno:
+- salario
+- fecha de alta en la empresa
 para controlar qué trabajador ejecuta cada acción y garantizar la trazabilidad de los movimientos.
 
 ##### RG4-RI-08 — Proveedores
 
 Como empleado del supermercado,
-quiero reconocer a los proveedores como usuarios que suministran productos de alimentación y limpieza,
+quiero reconocer a los proveedores como usuarios que suministran productos de alimentación y limpieza, almacenando de cada uno:
+- nombre de la empresa
+- CIF
 para poder registrar las compras, asociarlas a un distribuidor concreto y mantener el control del inventario.
 
 ---
@@ -276,7 +281,7 @@ para poder registrar las compras, asociarlas a un distribuidor concreto y manten
 ##### R.N.01. Incompatibilidad de roles
 
 Una persona registrada en el sistema puede ser empleado, cliente o proveedor, pero no puede tener asignados los roles de empleado y proveedor simultáneamente para evitar conflictos de intereses.
-- **Casos positivos:** Se registra un nuevo usuario con un único rol (ej. empleado) y el sistema acepta la operación.
+- **Casos positivos:** Se registra un nuevo usuario con un único rol (ej. empleado), o un empleado que también es cliente, y el sistema acepta la operación.
 - **Casos negativos:** Se intenta registrar un usuario asignándole a la vez los roles de proveedor y empleado, y el sistema rechaza la operación.
 
 ##### R.N.02. Salario solo si es empleado
@@ -335,13 +340,13 @@ Las ventas, compras a proveedores y ajustes de mermas solo pueden ser registrado
 
 ##### R.N.11. Ventas exclusivas a clientes
 
-Una venta en caja solo se le puede asociar a una persona que tenga asignado el rol de cliente.
+Una venta en caja solo se le puede asociar a una persona que tenga asignado el rol de cliente, y como máximo a uno. Si el cliente no se identifica, la venta se registra sin cliente asociado.
 - **Casos positivos:** Un cliente realiza una compra en el supermercado y el sistema registra la venta a su nombre correctamente.
 - **Casos negativos:** El sistema impide que se asigne una venta a una persona registrada únicamente con el rol de proveedor.
 
 ##### R.N.12. Contratación solo a mayores de 16 años
 
-Ningún empleado puede ser contratado ni dado de alta como trabajador en el sistema si su edad es menor a 16 años en la fecha de registro, cumpliendo así con los requisitos legales laborales.
+Ningún empleado puede ser contratado ni dado de alta como trabajador en el sistema si su edad es menor a 16 años en su fecha de alta, cumpliendo así con los requisitos legales laborales.
 - **Casos positivos:** Se inserta un nuevo registro de un empleado con una edad mayor o igual a 16 años y el sistema lo registra correctamente.
 - **Casos negativos:** Se intenta registrar un nuevo empleado con una edad menor a 16 años y el sistema rechaza la acción mostrando un mensaje de error.
 
@@ -369,18 +374,18 @@ para garantizar que solo los empleados con permisos puedan dar de alta productos
 
 ### 5.1. Diagramas de clases UML
 
-<img width="1568" height="2502" alt="image" src="https://github.com/user-attachments/assets/599f7981-0037-44f2-ae7f-af968d50c1d6" />
+<img width="1000" alt="Diagrama de clases UML" src="img/modelo_conceptual.png" />
 
 ### 5.2. Escenarios de prueba
 
-<img width="1622" height="1847" alt="image" src="https://github.com/user-attachments/assets/5fa35c40-eafc-4dc9-968a-30a7f1d19144" />
+<img width="900" alt="Escenario 1" src="img/escenario1.png" />
 
 #### Escenario 1 (positivo): venta en caja de un producto por unidad y otro a granel
 
 La empleada e1 cobra al cliente c1 4 briks de leche (tipo unidad, 1.10 €) y 1.25 kg de manzanas (tipo granel, 2.40 €/kg). Hay stock suficiente de los dos productos, así que la venta se registra con un importe total de 7.40 €. El stock de la leche baja de 50 a 46 y el de las manzanas de 35.5 a 34.25.
 Se cumplen R.N.05, R.N.07, R.N.08, R.N.10 y R.N.11.
 
-<img width="1675" height="1368" alt="image" src="https://github.com/user-attachments/assets/876fe829-4eb3-490a-8928-39ff9d222e6e" />
+<img width="900" alt="Escenario 2" src="img/escenario2.png" />
 
 #### Escenario 2 (negativo): venta que incumple R.N.07, R.N.08 y R.N.11
 
@@ -388,7 +393,7 @@ Se intenta registrar una venta asociada al proveedor pr1 en lugar de a un client
 
 ## 6. Matrices de trazabilidad
 
-<img width="2056" height="1686" alt="image" src="https://github.com/user-attachments/assets/328c37fd-72fb-45b8-b359-f031231f2b03" />
+<img width="1100" alt="Matriz de trazabilidad" src="img/matriz_trazabilidad.png" />
 
 
 ## 7. Modelo relacional en 3FN
