@@ -339,26 +339,22 @@ quiero que el acceso al sistema se realice mediante usuario (email) y contraseñ
 para garantizar que solo los empleados con permisos puedan dar de alta productos, cobrar en caja o registrar mermas.
 
 
--- fin entregable 1 --
-
-
 ## 5. Modelo conceptual
 
 ### 5.1. Diagramas de clases UML
 
-<img width="1862" height="1207" alt="modeladoConceptualUltimo" src="https://github.com/user-attachments/assets/d2455ba9-c945-4a1e-b64e-293bad8e2fb0" />
-
+<img width="1568" height="2502" alt="image" src="https://github.com/user-attachments/assets/599f7981-0037-44f2-ae7f-af968d50c1d6" />
 
 ### 5.2. Escenarios de prueba
 
-<img width="1021" height="797" alt="ecenario1" src="https://github.com/user-attachments/assets/1d5eeec5-e32b-4807-aea9-b8558bebb378" />
+<img width="1622" height="1847" alt="image" src="https://github.com/user-attachments/assets/5fa35c40-eafc-4dc9-968a-30a7f1d19144" />
 
 #### Escenario 1 (positivo): venta en caja de un producto por unidad y otro a granel
 
 La empleada e1 cobra al cliente c1 4 briks de leche (tipo unidad, 1.10 €) y 1.25 kg de manzanas (tipo granel, 2.40 €/kg). Hay stock suficiente de los dos productos, así que la venta se registra con un importe total de 7.40 €. El stock de la leche baja de 50 a 46 y el de las manzanas de 35.5 a 34.25.
 Se cumplen R.N.05, R.N.07, R.N.08, R.N.10 y R.N.11.
 
-<img width="1242" height="668" alt="escenario2" src="https://github.com/user-attachments/assets/1677c138-6ab4-42c7-811a-f529169eb989" />
+<img width="1675" height="1368" alt="image" src="https://github.com/user-attachments/assets/876fe829-4eb3-490a-8928-39ff9d222e6e" />
 
 #### Escenario 2 (negativo): venta que incumple R.N.07, R.N.08 y R.N.11
 
